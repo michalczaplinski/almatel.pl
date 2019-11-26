@@ -436,27 +436,7 @@ const data = {
     {
       id: 1,
       icon: "flaticon-facebook-logo",
-      link: "#1"
-    },
-    {
-      id: 2,
-      icon: "flaticon-twitter-logo-silhouette",
-      link: "#2"
-    },
-    {
-      id: 3,
-      icon: "flaticon-instagram",
-      link: "#3"
-    },
-    {
-      id: 4,
-      icon: "flaticon-tumblr-logo",
-      link: "#4"
-    },
-    {
-      id: 5,
-      icon: "flaticon-dribble-logo",
-      link: "#5"
+      link: "https://www.facebook.com/almatelpl/"
     }
   ]
 };

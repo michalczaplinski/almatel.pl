@@ -1,7 +1,7 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import Text from '../../reusecore/src/elements/Text';
-import CopyrightWrapper from './copyrightSection.style';
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Text from "../../reusecore/src/elements/Text";
+import CopyrightWrapper from "./copyrightSection.style";
 
 const CopyrightSection = () => {
   const Data = useStaticQuery(graphql`
@@ -27,7 +27,7 @@ const CopyrightSection = () => {
           </li>
         ))}
       </ul>
-      <Text content="Copyrights 2019 @RedQ Inc" />
+      <Text content={`Ⓒ ${new Date().getFullYear()} ALMATEL.PL`} />
     </CopyrightWrapper>
   );
 };

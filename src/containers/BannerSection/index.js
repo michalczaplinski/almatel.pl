@@ -6,8 +6,8 @@ import Heading from "../../reusecore/src/elements/Heading";
 import Button from "../../reusecore/src/elements/Button";
 import FeatureBlock from "../../common-components/FeatureBlock";
 import Container from "../../common-components/UI/Container";
-import Particles from "../Particle";
-import BannerWrapper, { DiscountLabel } from "./bannerSection.style";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import BannerWrapper from "./bannerSection.style";
 
 const BannerSection = ({
   row,
@@ -21,38 +21,36 @@ const BannerSection = ({
 }) => {
   const ButtonGroup = () => (
     <Fragment>
-      <Button title="LEARN MORE" {...btnStyle} />
-      <Button
-        title="WATCH WORKS"
-        variant="textButton"
-        icon={<i className="flaticon-next" />}
-        {...outlineBtnStyle}
-      />
+      <a
+        href="mailto:biuro@almatel.com?subject=Zapytanie"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button title="SKONTAKTUJ SIĘ TERAZ!" {...btnStyle} />
+      </a>
+      <AnchorLink href="#workHistorySection" offset={50}>
+        <Button
+          title="O NAS"
+          variant="textButton"
+          icon={<i className="flaticon-next" />}
+          {...outlineBtnStyle}
+        />
+      </AnchorLink>
     </Fragment>
   );
   return (
     <BannerWrapper>
-      <Particles />
       <Container>
         <Box className="row" {...row}>
           <Box className="col" {...col}>
-            <DiscountLabel>
-              <Text content="25% Discount" {...discountAmount} />
-              <Text content="on every first project budget" {...discountText} />
-            </DiscountLabel>
             <FeatureBlock
               title={
                 <Heading
-                  content="With Knowledge, Passion, Heart & Soul Agencies"
+                  content="Innowacyjne Technologie Budynkowe"
                   {...title}
                 />
               }
-              description={
-                <Text
-                  content="Agencies around the world are moving to the digital agencies. So, It is high time to introduce your agency digitaly ."
-                  {...description}
-                />
-              }
+              description={<Text content="" {...description} />}
               button={<ButtonGroup />}
             />
           </Box>

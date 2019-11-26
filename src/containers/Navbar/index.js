@@ -1,90 +1,20 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import { openModal, closeModal } from "@redq/reuse-modal";
 import NavbarWrapper from "../../reusecore/src/elements/Navbar";
 import Drawer from "../../reusecore/src/elements/Drawer";
-import Button from "../../reusecore/src/elements/Button";
 import Logo from "../../reusecore/src/elements/UI/Logo";
 import HamburgMenu from "../../common-components/HamburgMenu";
 import ScrollSpyMenu from "../../common-components/ScrollSpyMenu";
 import { Container } from "./navbar.style";
-import SearchPanel from "../SearchPanel";
-import LoginModal from "../LoginModal";
 import CopyrightSection from "../CopyrightsSection";
 
-import LogoImage from "../../assets/image/agency/logo.png";
+import LogoImage from "../../images/logotyp.png";
 
 import { DrawerContext } from "../../contexts/DrawerContext";
 
-// Default close button for modal
-const CloseModalButton = () => (
-  <Button
-    className="modalCloseBtn"
-    variant="fab"
-    onClick={() => closeModal()}
-    icon={<i className="flaticon-plus-symbol" />}
-  />
-);
-
-// Alt close button for modal
-const CloseModalButtonAlt = () => (
-  <Button
-    className="modalCloseBtn alt"
-    variant="fab"
-    onClick={() => closeModal()}
-    icon={<i className="flaticon-plus-symbol" />}
-  />
-);
-
 const Navbar = ({ navbarStyle, logoStyle }) => {
   const { state, dispatch } = useContext(DrawerContext);
-
-  // Search modal handler
-  const handleSearchModal = () => {
-    openModal({
-      config: {
-        className: "search-modal",
-        disableDragging: true,
-        width: "100%",
-        height: "100%",
-        animationFrom: { transform: "translateY(100px)" }, // react-spring <Spring from={}> props value
-        animationTo: { transform: "translateY(0)" }, //  react-spring <Spring to={}> props value
-        transition: {
-          mass: 1,
-          tension: 180,
-          friction: 26
-        }
-      },
-      component: SearchPanel,
-      componentProps: {},
-      closeComponent: CloseModalButtonAlt,
-      closeOnClickOutside: false
-    });
-  };
-
-  // Authentication modal handler
-  const handleLoginModal = () => {
-    openModal({
-      config: {
-        className: "login-modal",
-        disableDragging: true,
-        width: "100%",
-        height: "100%",
-        animationFrom: { transform: "translateY(100px)" }, // react-spring <Spring from={}> props value
-        animationTo: { transform: "translateY(0)" }, //  react-spring <Spring to={}> props value
-        transition: {
-          mass: 1,
-          tension: 180,
-          friction: 26
-        }
-      },
-      component: LoginModal,
-      componentProps: {},
-      closeComponent: CloseModalButton,
-      closeOnClickOutside: false
-    });
-  };
 
   // Toggle drawer
   const toggleHandler = () => {
@@ -115,18 +45,6 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
           logoStyle={logoStyle}
         />
         <div style={{ display: "flex", alignItems: "center" }}>
-          <Button
-            variant="textButton"
-            onClick={handleSearchModal}
-            icon={<i className="flaticon-magnifying-glass" />}
-            aria-label="search"
-          />
-          <Button
-            variant="textButton"
-            onClick={handleLoginModal}
-            icon={<i className="flaticon-user" />}
-            aria-label="login"
-          />
           <Drawer
             width="420px"
             placement="right"

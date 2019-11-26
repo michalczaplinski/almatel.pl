@@ -1,5 +1,4 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
 import Box from "../../reusecore/src/elements/Box";
 import Text from "../../reusecore/src/elements/Text";
@@ -7,8 +6,7 @@ import Heading from "../../reusecore/src/elements/Heading";
 import Logo from "../../reusecore/src/elements/UI/Logo";
 import Container from "../../common-components/UI/Container";
 import FooterWrapper, { List, ListItem } from "./footer.style";
-
-import LogoImage from "../../assets/image/agency/logo.png";
+import LogoImage from "../../images/logotyp.png";
 
 const Footer = ({
   row,
@@ -19,39 +17,40 @@ const Footer = ({
   logoStyle,
   textStyle
 }) => {
-  const Data = useStaticQuery(graphql`
-    query {
-      agencyJson {
-        menuWidget {
-          id
-          title
-          menuItems {
-            id
-            text
-            url
-          }
+  const data = [
+    {
+      id: 1,
+      title: "O Nas",
+      menuItems: [
+        {
+          id: 1,
+          url: "#features",
+          text: "this is us"
         }
-      }
+      ]
     }
-  `);
+  ];
 
   return (
     <FooterWrapper id="footerSection">
       <Container>
         <Box className="row" {...row}>
-          <Box {...colOne}>
+          <Box {...colOne} style={{ marginTop: 0 }}>
             <Logo
               href="#"
               logoSrc={LogoImage}
-              title="Agency"
+              title="Almatel"
               logoStyle={logoStyle}
             />
-            <Text content="hello@redq.io" {...textStyle} />
-            <Text content="+479-443-9334" {...textStyle} />
+
+            <a href="biuro@almatel.pl" target="_blank">
+              <Text content="biuro@almatel.pl" {...textStyle} />
+            </a>
+            <Text content="(061) 8 681 200" {...textStyle} />
           </Box>
           {/* End of footer logo column */}
           <Box {...colTwo}>
-            {Data.agencyJson.menuWidget.map(widget => (
+            {data.map(widget => (
               <Box className="col" {...col} key={widget.id}>
                 <Heading content={widget.title} {...titleStyle} />
                 <List>

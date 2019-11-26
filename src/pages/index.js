@@ -35,7 +35,7 @@ export default () => {
         <AgencyWrapper>
           <Sticky top={0} innerZ={9999} activeClass="sticky-nav-active">
             <DrawerProvider>
-              <Navbar />
+              <Navbar logoStyle={{ height: 50 }} />
             </DrawerProvider>
           </Sticky>
           <BannerSection />
