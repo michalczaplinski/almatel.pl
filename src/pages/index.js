@@ -26,7 +26,7 @@ export default () => {
   return (
     <ThemeProvider theme={agencyTheme}>
       <Fragment>
-        <SEO title="Agency" />
+        <SEO lang="pl" />
         <Modal />
         <ResetCSS />
         <GlobalStyle />
