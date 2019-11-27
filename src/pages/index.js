@@ -7,16 +7,11 @@ import { ResetCSS } from "../assets/css/style";
 import { GlobalStyle, AgencyWrapper } from "../style/agency.style";
 import Navbar from "../containers/Navbar";
 import BannerSection from "../containers/BannerSection";
-import FeatureSection from "../containers/FeatureSection";
 import AboutUsSection from "../containers/AboutUsSection";
 import WorkHistory from "../containers/WorkHistory";
-import BlogSection from "../containers/BlogSection";
 import TestimonialSection from "../containers/TestimonialSection";
-import TeamSection from "../containers/TeamSection";
-import VideoSection from "../containers/VideoSection";
 import FaqSection from "../containers/FaqSection";
-import NewsletterSection from "../containers/NewsletterSection";
-import QualitySection from "../containers/QualitySection";
+import OfferSection from "../containers/OfferSection";
 import Footer from "../containers/Footer";
 import { DrawerProvider } from "../contexts/DrawerContext";
 import "@redq/reuse-modal/es/index.css";
@@ -39,16 +34,13 @@ export default () => {
             </DrawerProvider>
           </Sticky>
           <BannerSection />
-          <FeatureSection />
+
           <AboutUsSection />
+          <OfferSection />
           <WorkHistory />
-          <BlogSection />
-          <QualitySection />
-          <VideoSection />
           <TestimonialSection />
-          <TeamSection />
           <FaqSection />
-          <NewsletterSection />
+
           <Footer />
         </AgencyWrapper>
         {/* End of agency wrapper section */}

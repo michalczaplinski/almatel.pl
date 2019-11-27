@@ -1,15 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
-import Image from 'gatsby-image';
-import Fade from 'react-reveal/Fade';
-import Box from '../../reusecore/src/elements/Box';
-import Text from '../../reusecore/src/elements/Text';
-import Heading from '../../reusecore/src/elements/Heading';
-import Card from '../../reusecore/src/elements/Card';
-import Button from '../../reusecore/src/elements/Button';
-import FeatureBlock from '../../common-components/FeatureBlock';
-import AboutUsSectionWrapper from './aboutUsSection.style';
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
+import Fade from "react-reveal/Fade";
+import Box from "../../reusecore/src/elements/Box";
+import Text from "../../reusecore/src/elements/Text";
+import Heading from "../../reusecore/src/elements/Heading";
+import Card from "../../reusecore/src/elements/Card";
+import Button from "../../reusecore/src/elements/Button";
+import FeatureBlock from "../../common-components/FeatureBlock";
+import AboutUsSectionWrapper from "./aboutUsSection.style";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const AboutUsSection = ({
   row,
@@ -18,31 +19,25 @@ const AboutUsSection = ({
   description,
   textArea,
   featureTitle,
-  btnStyle,
+  btnStyle
 }) => {
   const Data = useStaticQuery(graphql`
     query {
-      image1: file(
-        relativePath: { eq: "image/agency/group/group-image1.jpg" }
-      ) {
+      image1: file(relativePath: { eq: "image/camera.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 505, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      image2: file(
-        relativePath: { eq: "image/agency/group/group-image2.jpg" }
-      ) {
+      image2: file(relativePath: { eq: "image/camerablue.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 400, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      image3: file(
-        relativePath: { eq: "image/agency/group/group-image3.jpg" }
-      ) {
+      image3: file(relativePath: { eq: "image/2cameras.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 505, quality: 100) {
             ...GatsbyImageSharpFluid
@@ -60,29 +55,21 @@ const AboutUsSection = ({
   `);
 
   return (
-    <AboutUsSectionWrapper id="AboutUsSection">
+    <AboutUsSectionWrapper id="aboutUsSection">
       <Box className="row" {...row}>
         <Box className="col" {...col}>
           <Card className="group-gallery">
             <Box className="col1">
               <Fade top delay={30}>
                 <Image
-                  fluid={
-                    (Data.image1 !== null) | undefined
-                      ? Data.image1.childImageSharp.fluid
-                      : {}
-                  }
+                  fluid={Data.image1.childImageSharp.fluid}
                   objectFit="contain"
                   alt="Feature Image 1"
                 />
               </Fade>
               <Fade left delay={60}>
                 <Image
-                  fluid={
-                    (Data.image3 !== null) | undefined
-                      ? Data.image3.childImageSharp.fluid
-                      : {}
-                  }
+                  fluid={Data.image3.childImageSharp.fluid}
                   objectFit="contain"
                   alt="Feature Image 3"
                 />
@@ -91,11 +78,7 @@ const AboutUsSection = ({
             <Box className="col2">
               <Fade bottom delay={90}>
                 <Image
-                  fluid={
-                    (Data.image2 !== null) | undefined
-                      ? Data.image2.childImageSharp.fluid
-                      : {}
-                  }
+                  fluid={Data.image2.childImageSharp.fluid}
                   objectFit="contain"
                   alt="Feature Image 2"
                 />
@@ -108,13 +91,13 @@ const AboutUsSection = ({
             <FeatureBlock
               title={
                 <Heading
-                  content="Great Responsive & Strong Competitive People"
+                  content="30+ lat doświadczenia w branży zabezpieczeń"
                   {...title}
                 />
               }
               description={
                 <Text
-                  content="Some hardworking People are Working Day and Night to provide you highly scalable product . "
+                  content="Od domów jednorodzinnych do wiodących polskich banków. Jesteśmy liderami rynku zabezpieczeń obiektów."
                   {...description}
                 />
               }
@@ -129,7 +112,10 @@ const AboutUsSection = ({
                 title={<Heading content={feature.title} {...featureTitle} />}
               />
             ))}
-            <Button title="DISCOVER ITEM" {...btnStyle} />
+
+            <AnchorLink href="#offerSection" offset={50}>
+              <Button title="SPRAWDŹ NASZĄ OFETRĘ" {...btnStyle} />
+            </AnchorLink>
           </Box>
         </Box>
       </Box>
@@ -143,56 +129,56 @@ AboutUsSection.propTypes = {
   textArea: PropTypes.object,
   title: PropTypes.object,
   description: PropTypes.object,
-  btnStyle: PropTypes.object,
+  btnStyle: PropTypes.object
 };
 
 AboutUsSection.defaultProps = {
   // About us section row default style
   row: {
     flexBox: true,
-    flexWrap: 'wrap',
+    flexWrap: "wrap"
   },
   // About us section col default style
   col: {
-    width: [1, '100%', '50%'],
+    width: [1, "100%", "50%"]
   },
   // About us section text area default style
   textArea: {
-    maxWidth: '490px',
-    pl: '40px',
+    maxWidth: "490px",
+    pl: "40px"
   },
   // About us section title default style
   title: {
-    fontSize: ['26px', '26px', '30px', '40px'],
-    lineHeight: '1.5',
-    fontWeight: '300',
-    color: '#0f2137',
-    letterSpacing: '-0.025em',
-    mb: '30px',
+    fontSize: ["26px", "26px", "30px", "40px"],
+    lineHeight: "1.5",
+    fontWeight: "300",
+    color: "#0f2137",
+    letterSpacing: "-0.025em",
+    mb: "30px"
   },
   // About us section description default style
   description: {
-    fontSize: '16px',
-    color: '#343d48cc',
-    lineHeight: '1.75',
-    mb: '33px',
+    fontSize: "16px",
+    color: "#343d48cc",
+    lineHeight: "1.75",
+    mb: "33px"
   },
 
   // feature title default style
   featureTitle: {
-    fontSize: '16px',
-    fontWeight: '400',
-    color: '#343d48',
-    lineHeight: '1.5',
-    mb: '8px',
-    letterSpacing: '-0.020em',
+    fontSize: "16px",
+    fontWeight: "400",
+    color: "#343d48",
+    lineHeight: "1.5",
+    mb: "8px",
+    letterSpacing: "-0.020em"
   },
   // Button default style
   btnStyle: {
-    minWidth: '156px',
-    fontSize: '14px',
-    fontWeight: '500',
-  },
+    minWidth: "156px",
+    fontSize: "14px",
+    fontWeight: "500"
+  }
 };
 
 export default AboutUsSection;

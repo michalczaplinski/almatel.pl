@@ -28,7 +28,7 @@ const BannerSection = ({
       >
         <Button title="SKONTAKTUJ SIĘ TERAZ!" {...btnStyle} />
       </a>
-      <AnchorLink href="#workHistorySection" offset={50}>
+      <AnchorLink href="#aboutUsSection" offset={0}>
         <Button
           title="O NAS"
           variant="textButton"
@@ -111,7 +111,7 @@ BannerSection.defaultProps = {
   },
   discountAmount: {
     fontSize: "14px",
-    color: "#10AC84",
+    color: "#008dd2",
     mb: 0,
     as: "span",
     mr: "0.4em"

@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   siteMetadata: {
     title: `Almatel`,
@@ -16,14 +18,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
+        path: path.join(__dirname, `src`, `images`)
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `common`,
-        path: `${__dirname}/src/assets/`
+        path: `${__dirname}/src/assets`
       }
     },
     `gatsby-transformer-json`,
@@ -31,7 +33,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/src/data/`
+        path: `${__dirname}/src/data`
       }
     },
     `gatsby-transformer-sharp`,

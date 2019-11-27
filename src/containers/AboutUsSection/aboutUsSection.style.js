@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { themeGet } from 'styled-system';
+import styled from "styled-components";
+import { themeGet } from "styled-system";
 
 const AboutUsSectionWrapper = styled.section`
   padding: 80px 0 50px;
@@ -41,7 +41,7 @@ const AboutUsSectionWrapper = styled.section`
     align-items: center;
     margin-bottom: 14px;
     .icon__wrapper {
-      color: ${themeGet('colors.primary', '#10ac84')};
+      color: ${themeGet("colors.primary", "#10ac84")};
       margin-right: 10px;
     }
     .content__wrapper {
@@ -55,7 +55,7 @@ const AboutUsSectionWrapper = styled.section`
     margin-top: 36px;
     transition: all 0.3s ease;
     &:hover {
-      box-shadow: 0px 9px 20px -5px rgba(16, 172, 132, 0.57);
+      box-shadow: 0px 9px 20px -5px #75b8d9;
     }
   }
 `;

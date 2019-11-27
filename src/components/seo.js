@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ description, lang, meta, keywords }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -15,7 +15,7 @@ function SEO({ description, lang, meta, keywords, title }) {
             htmlAttributes={{
               lang
             }}
-            title={title}
+            title={`${data.site.siteMetadata.title} | Innowacyjne Technologie Budynkowe`}
             titleTemplate={`${data.site.siteMetadata.title} | Innowacyjne Technologie Budynkowe`}
             meta={[
               {
@@ -24,7 +24,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `og:title`,
-                content: title
+                content: `${data.site.siteMetadata.title} | Innowacyjne Technologie Budynkowe`
               },
               {
                 property: `og:description`,
@@ -44,7 +44,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 name: `twitter:title`,
-                content: title
+                content: `${data.site.siteMetadata.title} | Innowacyjne Technologie Budynkowe`
               },
               {
                 name: `twitter:description`,
@@ -77,8 +77,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired
+  keywords: PropTypes.arrayOf(PropTypes.string)
 };
 
 export default SEO;
