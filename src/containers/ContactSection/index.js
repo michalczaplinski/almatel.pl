@@ -44,7 +44,7 @@ const NewsletterSection = ({
           <Heading content="Kontakt" {...sectionTitle} />
 
           <ContactBox>
-            <ContactSubbox style={{ paddingTop: 4 }}>
+            <ContactSubbox style={{ paddingTop: 3 }}>
               <h3 style={{ marginBlockStart: 0, margin: 0 }}>ALMATEL</h3>
               <h4 style={{ marginBlockStart: 0, margin: 0 }}>Spółka Jawna </h4>
             </ContactSubbox>
