@@ -9,9 +9,10 @@ import Navbar from "../containers/Navbar";
 import BannerSection from "../containers/BannerSection";
 import AboutUsSection from "../containers/AboutUsSection";
 import WorkHistory from "../containers/WorkHistory";
-import TestimonialSection from "../containers/TestimonialSection";
+// import TestimonialSection from "../containers/TestimonialSection";
 import FaqSection from "../containers/FaqSection";
 import OfferSection from "../containers/OfferSection";
+import ContactSection from "../containers/ContactSection";
 import Footer from "../containers/Footer";
 import { DrawerProvider } from "../contexts/DrawerContext";
 import "@redq/reuse-modal/es/index.css";
@@ -38,7 +39,7 @@ export default () => {
           <AboutUsSection />
           <OfferSection />
           <WorkHistory />
-          <TestimonialSection />
+          <ContactSection />
           <FaqSection />
 
           <Footer />

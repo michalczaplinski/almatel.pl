@@ -43,10 +43,18 @@ const Footer = ({
               logoStyle={logoStyle}
             />
 
-            <a href="biuro@almatel.pl" target="_blank">
-              <Text content="biuro@almatel.pl" {...textStyle} />
+            <a
+              href="mailto:biuro@almatel.com?subject=Zapytanie"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Text content="biuro@almatel.pl" />
             </a>
-            <Text content="(061) 8 681 200" {...textStyle} />
+            <a href="tel:618681200">
+              <Text content="(061) 8 681 200" />
+            </a>
+            <Text content="60-118 Poznań" />
+            <Text content="ul. Krzywa 9" />
           </Box>
           {/* End of footer logo column */}
           <Box {...colTwo}>

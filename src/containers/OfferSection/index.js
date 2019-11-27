@@ -10,7 +10,7 @@ import Image from "../../reusecore/src/elements/Image";
 import FeatureBlock from "../../common-components/FeatureBlock";
 import Container from "../../common-components/UI/Container";
 import OfferSectionWrapper from "./offerSection.style";
-import FeatureImage from "../../assets/image/agency/surface-studio.png";
+import FeatureImage from "../../assets/image/room.jpg";
 
 const OfferSection = ({
   row,
@@ -40,23 +40,18 @@ const OfferSection = ({
   `);
 
   return (
-    <OfferSectionWrapper id="Section">
+    <OfferSectionWrapper id="offerSection">
       <Container>
         <Box className="row" {...row}>
           <Box className="col" {...col} {...textArea}>
             <FeatureBlock
               title={
                 <Heading
-                  content="Our Quality feature that customers always prefer to use on their products."
+                  content="Kompleksowe Technologie Budynkowe"
                   {...title}
                 />
               }
-              description={
-                <Text
-                  content="Customers are our first priority and we provide some exceptional features that our customer prefers . That's why our customers never leave us ."
-                  {...description}
-                />
-              }
+              description={<Text content="" {...description} />}
             />
           </Box>
         </Box>
@@ -81,7 +76,11 @@ const OfferSection = ({
           <Box className="col" {...col} {...imageArea}>
             <Card {...imageWrapper}>
               <Fade right delay={200}>
-                <Image src={FeatureImage} alt="Feature Image" />
+                <Image
+                  src={FeatureImage}
+                  alt="Feature Image"
+                  style={{ maxHeight: 550 }}
+                />
               </Fade>
             </Card>
           </Box>
@@ -159,7 +158,7 @@ OfferSection.defaultProps = {
     width: "54px",
     height: "54px",
     borderRadius: "50%",
-    bg: "#93d26e",
+    bg: "#008dd2",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

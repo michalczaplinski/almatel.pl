@@ -33,8 +33,8 @@ const OfferSectionWrapper = styled.section`
       position: relative;
       background: linear-gradient(
         -60deg,
-        rgba(241, 39, 17, 0.8),
-        rgba(245, 175, 25, 0.8)
+        rgba(225, 34, 45, 0.9),
+        rgba(225, 34, 45, 0.9)
       );
       .flaticon-flask {
         &:before {
@@ -64,11 +64,7 @@ const OfferSectionWrapper = styled.section`
       &:nth-child(2) {
         .feature__block {
           .icon__wrapper {
-            background: linear-gradient(
-              -60deg,
-              rgba(50, 207, 167, 0.9),
-              rgba(150, 201, 61, 0.9)
-            );
+            background: linear-gradient(-60deg, #008dd2, #008dd2);
           }
         }
       }
@@ -77,8 +73,8 @@ const OfferSectionWrapper = styled.section`
           .icon__wrapper {
             background: linear-gradient(
               -60deg,
-              rgba(236, 0, 140, 0.85),
-              rgba(255, 103, 103, 0.85)
+              rgba(91, 91, 91, 0.9),
+              rgba(91, 91, 91, 0.9)
             );
           }
         }

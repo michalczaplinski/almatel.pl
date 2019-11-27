@@ -21,13 +21,13 @@ const BannerSection = ({
 }) => {
   const ButtonGroup = () => (
     <Fragment>
-      <a
-        href="mailto:biuro@almatel.com?subject=Zapytanie"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Button title="SKONTAKTUJ SIĘ TERAZ!" {...btnStyle} />
-      </a>
+      <AnchorLink href="#contactSection" offset={0}>
+        <Button
+          title="SKONTAKTUJ SIĘ TERAZ!"
+          {...btnStyle}
+          className="kontakt"
+        />
+      </AnchorLink>
       <AnchorLink href="#aboutUsSection" offset={0}>
         <Button
           title="O NAS"
@@ -46,11 +46,17 @@ const BannerSection = ({
             <FeatureBlock
               title={
                 <Heading
-                  content="Innowacyjne Technologie Budynkowe"
+                  content="Kompleksowe Technologie Budynkowe"
                   {...title}
                 />
               }
-              description={<Text content="" {...description} />}
+              description={
+                <Text
+                  content="Systemy zabezpieczeń obiektów: alarmowe, pożarowe, telewizji dozorowej CCTV, 
+                  kontroli dostępu, rejestracji czasu pracy oraz wiele innych."
+                  {...description}
+                />
+              }
               button={<ButtonGroup />}
             />
           </Box>

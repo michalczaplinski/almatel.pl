@@ -42,12 +42,10 @@ const BannerWrapper = styled.section`
   }
   .button__wrapper {
     margin-top: 40px;
-    .reusecore__button {
-      &:first-child {
-        transition: all 0.3s ease;
-        &:hover {
-          box-shadow: 0px 9px 20px -5px #75b8d9;
-        }
+    .kontakt {
+      transition: all 0.3s ease;
+      &:hover {
+        box-shadow: 0px 9px 20px -5px #75b8d9;
       }
     }
   }

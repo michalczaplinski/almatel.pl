@@ -40,6 +40,7 @@ const Navbar = ({ navbarStyle, logoStyle }) => {
       <Container>
         <Logo
           href="#"
+          target="_blank"
           logoSrc={LogoImage}
           title="Agency"
           logoStyle={logoStyle}

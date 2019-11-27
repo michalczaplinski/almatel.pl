@@ -30,14 +30,14 @@ const AboutUsSection = ({
           }
         }
       }
-      image2: file(relativePath: { eq: "image/camerablue.jpg" }) {
+      image2: file(relativePath: { eq: "image/2cameras.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 400, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      image3: file(relativePath: { eq: "image/2cameras.jpg" }) {
+      image3: file(relativePath: { eq: "image/cctv.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 505, quality: 100) {
             ...GatsbyImageSharpFluid
@@ -113,8 +113,8 @@ const AboutUsSection = ({
               />
             ))}
 
-            <AnchorLink href="#offerSection" offset={50}>
-              <Button title="SPRAWDŹ NASZĄ OFETRĘ" {...btnStyle} />
+            <AnchorLink href="#offerSection" offset={-10}>
+              <Button title="SPRAWDŹ NASZĄ OFERTĘ" {...btnStyle} />
             </AnchorLink>
           </Box>
         </Box>

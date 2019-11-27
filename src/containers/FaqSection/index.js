@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import Box from '../../reusecore/src/elements/Box';
-import Text from '../../reusecore/src/elements/Text';
-import Heading from '../../reusecore/src/elements/Heading';
-import Container from '../../common-components/UI/Container';
+import React, { Fragment } from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import PropTypes from "prop-types";
+import Box from "../../reusecore/src/elements/Box";
+import Text from "../../reusecore/src/elements/Text";
+import Heading from "../../reusecore/src/elements/Heading";
+import Container from "../../common-components/UI/Container";
 import {
   Accordion,
   AccordionItem,
@@ -12,19 +12,19 @@ import {
   AccordionBody,
   IconWrapper,
   OpenIcon,
-  CloseIcon,
-} from '../../common-components/Accordion';
-import { Icon } from 'react-icons-kit';
-import { plus } from 'react-icons-kit/entypo/plus';
-import { minus } from 'react-icons-kit/entypo/minus';
-import FaqSectionWrapper from './faqSection.style';
+  CloseIcon
+} from "../../common-components/Accordion";
+import { Icon } from "react-icons-kit";
+import { plus } from "react-icons-kit/entypo/plus";
+import { minus } from "react-icons-kit/entypo/minus";
+import FaqSectionWrapper from "./faqSection.style";
 
 const FaqSection = ({
   sectionHeader,
   sectionTitle,
   sectionSubTitle,
   titleStyle,
-  descriptionStyle,
+  descriptionStyle
 }) => {
   const Data = useStaticQuery(graphql`
     query {
@@ -44,7 +44,7 @@ const FaqSection = ({
       <Container>
         <Box {...sectionHeader}>
           <Text content="FAQ" {...sectionSubTitle} />
-          <Heading content="Frequently Ask Question" {...sectionTitle} />
+          <Heading content="Często Zadawane Pytania" {...sectionTitle} />
         </Box>
         <Box className="row">
           <Accordion>
@@ -88,50 +88,50 @@ FaqSection.propTypes = {
   row: PropTypes.object,
   col: PropTypes.object,
   sectionTitle: PropTypes.object,
-  sectionSubTitle: PropTypes.object,
+  sectionSubTitle: PropTypes.object
 };
 
 // FaqSection default style
 FaqSection.defaultProps = {
   // section header default style
   sectionHeader: {
-    mb: ['40px', '56px'],
+    mb: ["40px", "56px"]
   },
   // sub section default style
   sectionSubTitle: {
-    as: 'span',
-    display: 'block',
-    textAlign: 'center',
-    fontSize: '14px',
-    letterSpacing: '0.15em',
-    fontWeight: '700',
-    color: '#10ac84',
-    mb: '10px',
+    as: "span",
+    display: "block",
+    textAlign: "center",
+    fontSize: "14px",
+    letterSpacing: "0.15em",
+    fontWeight: "700",
+    color: "#008dd2",
+    mb: "10px"
   },
   // section title default style
   sectionTitle: {
-    textAlign: 'center',
-    fontSize: ['20px', '24px'],
-    fontWeight: '400',
-    color: '#0f2137',
-    letterSpacing: '-0.025em',
-    mb: '0',
+    textAlign: "center",
+    fontSize: ["20px", "24px"],
+    fontWeight: "400",
+    color: "#0f2137",
+    letterSpacing: "-0.025em",
+    mb: "0"
   },
   // accordion title default style
   titleStyle: {
-    fontSize: ['16px', '19px'],
-    fontWeight: '400',
-    color: '#0f2137',
-    letterSpacing: '-0.025em',
-    mb: '0',
+    fontSize: ["16px", "19px"],
+    fontWeight: "400",
+    color: "#0f2137",
+    letterSpacing: "-0.025em",
+    mb: "0"
   },
   // accordion description default style
   descriptionStyle: {
-    fontSize: '15px',
-    color: '#343d48cc',
-    lineHeight: '1.75',
-    mb: '0',
-  },
+    fontSize: "15px",
+    color: "#343d48cc",
+    lineHeight: "1.75",
+    mb: "0"
+  }
 };
 
 export default FaqSection;
